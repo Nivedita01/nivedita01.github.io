@@ -3,97 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nivedita Hari | Lead QA</title>
+
+  <title>Nivedita Hari | Lead QA Engineer</title>
+  <meta name="description"
+        content="Nivedita Hari is a QA Engineer specializing in manual testing, automation testing, Selenium, Python, Pytest, API testing, and software quality assurance.">
+
   <style>
+    :root {
+      --navy: #0f172a;
+      --navy-light: #1e293b;
+      --blue: #2563eb;
+      --violet: #7c3aed;
+      --green: #10b981;
+      --text: #334155;
+      --muted: #64748b;
+      --background: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      line-height: 1.6;
-      color: #222;
-      background: #f7f9fc;
-    }
-
-    header {
-      text-align: center;
-      padding: 30px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      margin-bottom: 5px;
-      color: #1f4e79;
-    }
-
-    h2 {
-      color: #1f4e79;
-      margin-top: 32px;
-    }
-
-    section {
-      background: white;
-      margin-top: 20px;
-      padding: 25px;
-      border-radius: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.65;
     }
 
     a {
-      color: #1f4e79;
-      font-weight: bold;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .nav-content {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 105px 0 85px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 34%),
+        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.14), transparent 28%),
+        var(--background);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      align-items: center;
+      gap: 58px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      margin-bottom: 20px;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      color: #1d4ed8;
+      background: #eff6ff;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.16);
+    }
+
+    h1 {
+      max-width: 760px;
+      color: var(--navy);
+      font-size: clamp(2.5rem, 6vw, 4.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      margin-bottom: 22px;
+    }
+
+    h1 .accent {
+      color: var(--blue);
+    }
+
+    .hero-text {
+      max-width: 660px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .button {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      background: #1f4e79;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 19px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
-  </style>
-</head>
 
-<body>
-  <header>
-    <h1>Nivedita Hari</h1>
-    <p>Lead QA | GenAI, Eval and Automation</p>
-    <a class="button" href="mailto:hari.nivedita@gmail.com">Contact Me</a>
-  </header>
+    .button:hover {
+      transform: translateY(-2px);
+    }
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am a QA professional with experience in manual testing,
-      automation testing, Selenium, Python, Pytest, API testing,
-      test-case design, and software quality assurance.
-    </p>
-  </section>
+    .button-primary {
+      color: var(--white);
+      background: var(--blue);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.24);
+    }
 
-  <section>
-    <h2>Skills</h2>
-    <p>
-      Manual Testing • Selenium • Python • Pytest • API Testing •
-      Regression Testing • Functional Testing • Test Documentation
-    </p>
-  </section>
+    .button-primary:hover {
+      background: #1d4ed8;
+    }
 
-  <section>
-    <h2>Projects</h2>
-    <p>
-      Add links here to your GitHub projects, test automation samples,
-      API-testing examples, or QA portfolio materials.
-    </p>
-  </section>
+    .button-secondary {
+      color: var(--navy);
+      background: var(--white);
+      border-color: var(--border);
+    }
 
-  <section>
-    <h2>Contact</h2>
-    <p>
-      GitHub: <a href="https://github.com/nivedita01">View my GitHub profile</a>
-    </p>
-  </section>
-</body>
-</html>
+    .button-secondary:hover {
+      box-shadow: var(--shadow
