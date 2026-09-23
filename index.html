@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Nivedita Hari | QA Engineer</title>
+  <meta name="description"
+        content="Personal portfolio of Nivedita Hari, a QA Engineer specializing in manual testing, test automation, Selenium, Python, Pytest, and API testing.">
 
   <style>
     :root {
-      --navy: #0f172a;
-      --blue: #2563eb;
-      --text: #334155;
-      --muted: #64748b;
-      --bg: #f8fafc;
-      --white: #ffffff;
-      --border: #e2e8f0;
+      --ink: #223047;
+      --text: #4b5563;
+      --soft-text: #6b7280;
+      --paper: #fffdfa;
+      --background: #f5f4f0;
+      --line: #e7e4dc;
+      --accent: #a75c45;
+      --accent-light: #f4e2da;
+      --sage: #dbe8df;
+      --card: #ffffff;
+      --shadow: 0 12px 35px rgba(47, 48, 46, 0.08);
     }
 
     * {
@@ -26,320 +33,412 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
+      background: var(--background);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
-      width: min(1100px, 90%);
+      width: min(1040px, 90%);
       margin: 0 auto;
     }
+
+    /* Navigation */
 
     nav {
       position: sticky;
       top: 0;
       z-index: 10;
-      padding: 18px 0;
-      background: rgba(248, 250, 252, 0.95);
-      border-bottom: 1px solid var(--border);
+      background: rgba(245, 244, 240, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(231, 228, 220, 0.95);
     }
 
     .nav-content {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 22px;
+      padding: 17px 0;
     }
 
-    .logo {
-      color: var(--navy);
-      font-size: 1.2rem;
+    .brand {
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
       font-weight: bold;
-    }
-
-    .logo span {
-      color: var(--blue);
+      letter-spacing: -0.02em;
     }
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      gap: 20px;
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
     .nav-links a {
-      color: var(--muted);
-      font-size: 0.95rem;
+      color: var(--soft-text);
+      font-size: 0.92rem;
       font-weight: bold;
-      text-decoration: none;
     }
 
     .nav-links a:hover {
-      color: var(--blue);
+      color: var(--accent);
     }
+
+    /* Hero */
 
     .hero {
-      padding: 95px 0 75px;
+      padding: 92px 0 68px;
       background:
-        radial-gradient(circle at top left, #dbeafe, transparent 35%),
-        radial-gradient(circle at 85% 25%, #ede9fe, transparent 30%),
-        var(--bg);
+        radial-gradient(circle at 8% 20%, rgba(219, 232, 223, 0.95), transparent 31%),
+        radial-gradient(circle at 88% 12%, rgba(244, 226, 218, 0.95), transparent 28%),
+        var(--background);
     }
 
-    .hero-grid {
+    .hero-layout {
       display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 45px;
+      grid-template-columns: 180px 1fr;
       align-items: center;
+      gap: 45px;
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 7px 12px;
-      color: #1d4ed8;
-      background: #dbeafe;
-      border-radius: 999px;
-      font-size: 0.85rem;
+    .portrait {
+      display: grid;
+      place-items: center;
+      width: 165px;
+      height: 165px;
+      color: var(--ink);
+      background: var(--sage);
+      border: 7px solid var(--paper);
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.3rem;
       font-weight: bold;
     }
 
+    .hello {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 0.83rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
     h1 {
-      margin: 0 0 20px;
-      color: var(--navy);
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
+      max-width: 720px;
+      margin: 0 0 17px;
+      font-size: clamp(2.6rem, 6vw, 4.35rem);
+      font-weight: normal;
+      letter-spacing: -0.05em;
+      line-height: 1.05;
     }
 
-    h1 span {
-      color: var(--blue);
-    }
-
-    .hero-text {
-      max-width: 650px;
-      margin-bottom: 28px;
-      color: var(--muted);
+    .hero p {
+      max-width: 680px;
+      margin: 0;
+      color: var(--text);
       font-size: 1.1rem;
     }
 
-    .buttons {
+    .hero p strong {
+      color: var(--ink);
+    }
+
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      margin-top: 28px;
     }
 
     .button {
       display: inline-block;
-      padding: 12px 18px;
+      padding: 11px 17px;
       border: 1px solid transparent;
-      border-radius: 9px;
+      border-radius: 8px;
+      font-size: 0.93rem;
       font-weight: bold;
-      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
     }
 
     .button-primary {
       color: white;
-      background: var(--blue);
+      background: var(--accent);
     }
 
     .button-secondary {
-      color: var(--navy);
-      background: white;
-      border-color: var(--border);
+      color: var(--ink);
+      background: var(--paper);
+      border-color: var(--line);
     }
 
-    .summary-card {
-      padding: 27px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-    }
-
-    .summary-card h3 {
-      margin-top: 0;
-      color: var(--navy);
-    }
-
-    .summary-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 13px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .summary-item:last-child {
-      border-bottom: none;
-    }
-
-    .summary-item span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .summary-item strong {
-      color: var(--navy);
-      font-size: 0.92rem;
-      text-align: right;
-    }
+    /* Shared sections */
 
     section {
-      padding: 75px 0;
+      padding: 76px 0;
     }
 
-    .section-label {
+    .section-heading {
+      max-width: 710px;
+      margin-bottom: 31px;
+    }
+
+    .eyebrow {
       display: block;
-      margin-bottom: 8px;
-      color: var(--blue);
-      font-size: 0.8rem;
+      margin-bottom: 9px;
+      color: var(--accent);
+      font-size: 0.78rem;
       font-weight: bold;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     h2 {
-      margin-top: 0;
-      color: var(--navy);
-      font-size: 2rem;
+      margin: 0 0 11px;
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      font-weight: normal;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
     }
 
-    .section-intro {
-      max-width: 700px;
-      margin-bottom: 30px;
-      color: var(--muted);
+    .section-heading p {
+      margin: 0;
+      color: var(--soft-text);
     }
 
-    .two-column {
+    /* About */
+
+    .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
     }
 
-    .card {
-      padding: 28px;
-      background: white;
-      border: 1px solid var(--border);
+    .about-copy,
+    .details-card {
+      padding: 30px;
+      background: var(--card);
+      border: 1px solid var(--line);
       border-radius: 16px;
     }
 
-    .card p {
-      margin-bottom: 0;
+    .about-copy p {
+      margin: 0;
     }
 
-    .skills {
-      background: #eef4ff;
+    .about-copy p + p {
+      margin-top: 16px;
     }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .skill-card,
-    .project-card {
-      padding: 25px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-    }
-
-    .skill-number {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 8px 11px;
-      color: var(--blue);
-      background: #dbeafe;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .skill-card h3,
-    .project-card h3 {
+    .details-card h3 {
       margin-top: 0;
-      color: var(--navy);
+      margin-bottom: 18px;
+      font-size: 1.2rem;
     }
 
-    .skill-card p,
-    .project-card p {
-      margin-bottom: 0;
-      color: var(--muted);
+    .detail-row {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .project-tag {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 5px 9px;
-      color: #4338ca;
-      background: #eef2ff;
-      border-radius: 999px;
-      font-size: 0.75rem;
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+
+    .detail-label {
+      display: block;
+      color: var(--soft-text);
+      font-size: 0.8rem;
       font-weight: bold;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
 
-    .project-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: var(--blue);
+    .detail-value {
+      color: var(--ink);
+      font-size: 0.98rem;
+    }
+
+    /* Work and projects */
+
+    .work-section {
+      background: var(--paper);
+    }
+
+    .project-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 155px 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-type {
+      color: var(--accent);
+      font-size: 0.77rem;
       font-weight: bold;
-      text-decoration: none;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .project h3 {
+      margin: 0 0 5px;
+      font-size: 1.18rem;
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--soft-text);
+      font-size: 0.94rem;
+    }
+
+    .project-link {
+      color: var(--accent);
+      font-size: 0.91rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* Current interests */
+
+    .now-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .now-card {
+      padding: 25px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+    }
+
+    .now-card h3 {
+      margin: 0 0 9px;
+      font-size: 1.12rem;
+    }
+
+    .now-card p {
+      margin: 0;
+      color: var(--soft-text);
+      font-size: 0.94rem;
+    }
+
+    /* Contact */
+
+    .contact-section {
+      padding-top: 30px;
     }
 
     .contact-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      padding: 40px;
-      color: white;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      padding: 42px;
+      color: var(--ink);
+      background: var(--sage);
       border-radius: 20px;
     }
 
     .contact-box h2 {
       margin-bottom: 10px;
-      color: white;
     }
 
     .contact-box p {
+      max-width: 660px;
       margin: 0;
-      color: #cbd5e1;
     }
 
-    .contact-box .button {
-      flex-shrink: 0;
-      color: var(--navy);
-      background: white;
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-link {
+      padding: 10px 14px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(34, 48, 71, 0.12);
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: bold;
+    }
+
+    .contact-link:hover {
+      color: white;
+      background: var(--accent);
     }
 
     footer {
-      padding: 28px 0;
-      color: var(--muted);
-      font-size: 0.9rem;
+      padding: 28px 0 34px;
+      color: var(--soft-text);
+      font-size: 0.88rem;
       text-align: center;
     }
 
-    @media (max-width: 800px) {
-      .hero-grid,
-      .two-column,
-      .card-grid {
+    /* Mobile layout */
+
+    @media (max-width: 760px) {
+      .hero-layout,
+      .about-grid,
+      .now-grid {
         grid-template-columns: 1fr;
       }
 
-      .contact-box {
-        align-items: flex-start;
-        flex-direction: column;
+      .portrait {
+        width: 125px;
+        height: 125px;
+        font-size: 2.5rem;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .project-link {
+        margin-top: 6px;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 560px) {
       .nav-content {
         align-items: flex-start;
         flex-direction: column;
@@ -349,23 +448,29 @@
         width: 100%;
         justify-content: space-between;
         gap: 8px;
-        font-size: 0.85rem;
+        font-size: 0.83rem;
       }
 
       .hero {
-        padding: 65px 0 55px;
+        padding: 62px 0 55px;
       }
 
       section {
         padding: 60px 0;
       }
 
-      .buttons {
+      .hero-actions {
         flex-direction: column;
       }
 
       .button {
         text-align: center;
+      }
+
+      .about-copy,
+      .details-card,
+      .contact-box {
+        padding: 25px;
       }
     }
   </style>
@@ -375,13 +480,13 @@
 
   <nav>
     <div class="container nav-content">
-      <a class="logo" href="#home">Nivedita<span>.</span></a>
+      <a class="brand" href="#home">Nivedita Hari</a>
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#now">Now</a></li>
+        <li><a href="#connect">Connect</a></li>
       </ul>
     </div>
   </nav>
@@ -389,50 +494,26 @@
   <main>
 
     <section class="hero" id="home">
-      <div class="container hero-grid">
+      <div class="container hero-layout">
+
+        <!-- Replace NH with a professional photo later, if desired. -->
+        <div class="portrait" aria-label="Nivedita Hari initials">NH</div>
 
         <div>
-          <div class="eyebrow">QA Engineer & Software Tester</div>
+          <span class="hello">Hello, I’m Nivedita.</span>
 
-          <h1>
-            Helping teams build
-            <span>reliable software.</span>
-          </h1>
+          <h1>QA Engineer, lifelong learner, and thoughtful problem solver.</h1>
 
-          <p class="hero-text">
-            QA professional specializing in manual and automation testing,
-            Selenium, Python, Pytest, API testing, and clear test documentation.
+          <p>
+            I am based in <strong>Harrisburg, Pennsylvania</strong> and bring
+            experience in manual testing, test automation, Selenium, Python,
+            Pytest, and API testing. I enjoy turning complex application
+            behavior into clear test plans, meaningful coverage, and stronger releases.
           </p>
 
-          <div class="buttons">
-            <a class="button button-primary" href="#projects">View My Work</a>
-            <a class="button button-secondary" href="mailto:your-email@example.com">
-              Contact Me
-            </a>
-          </div>
-        </div>
-
-        <div class="summary-card">
-          <h3>Quality at a glance</h3>
-
-          <div class="summary-item">
-            <span>Testing focus</span>
-            <strong>Web & API Quality</strong>
-          </div>
-
-          <div class="summary-item">
-            <span>Automation</span>
-            <strong>Python, Selenium, Pytest</strong>
-          </div>
-
-          <div class="summary-item">
-            <span>Approach</span>
-            <strong>Manual + Automated</strong>
-          </div>
-
-          <div class="summary-item">
-            <span>Location</span>
-            <strong>Harrisburg, PA</strong>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">See my work</a>
+            <a class="button button-secondary" href="#connect">Let’s connect</a>
           </div>
         </div>
 
@@ -441,126 +522,164 @@
 
     <section id="about">
       <div class="container">
-        <span class="section-label">About me</span>
-        <h2>Clear testing. Stronger releases.</h2>
+        <div class="section-heading">
+          <span class="eyebrow">A little about me</span>
+          <h2>I care about the details that make software work well for people.</h2>
+        </div>
 
-        <p class="section-intro">
-          I combine detailed manual testing with maintainable automation to help
-          teams identify risks early and deliver high-quality applications.
-        </p>
-
-        <div class="two-column">
-          <div class="card">
-            <h3>What I do</h3>
+        <div class="about-grid">
+          <div class="about-copy">
             <p>
-              I create practical test coverage through functional, regression,
-              exploratory, usability, UI automation, and API testing.
+              My background is in software testing and quality assurance,
+              working across web-based applications and different business domains.
+              I enjoy both the investigative side of manual testing and the
+              structure of building repeatable automation.
+            </p>
+
+            <p>
+              I am especially interested in creating useful test documentation,
+              designing thoughtful test scenarios, exploring API behavior, and
+              continuously learning new tools and approaches that improve quality.
+            </p>
+
+            <p>
+              Outside of QA, I enjoy creating educational materials, supporting
+              children’s learning and enrichment, planning family activities,
+              and exploring creative projects such as soap making.
             </p>
           </div>
 
-          <div class="card">
-            <h3>How I work</h3>
-            <p>
-              I focus on clear test cases, actionable defect reports, useful
-              evidence, and communication that supports the full development lifecycle.
-            </p>
-          </div>
+          <aside class="details-card">
+            <h3>Quick details</h3>
+
+            <div class="detail-row">
+              <span class="detail-label">Based in</span>
+              <span class="detail-value">Harrisburg, Pennsylvania</span>
+            </div>
+
+            <div class="detail-row">
+              <span class="detail-label">Focus areas</span>
+              <span class="detail-value">Manual QA, Automation, API Testing</span>
+            </div>
+
+            <div class="detail-row">
+              <span class="detail-label">Tools I use</span>
+              <span class="detail-value">Selenium, Python, Pytest, SQL</span>
+            </div>
+
+            <div class="detail-row">
+              <span class="detail-label">Currently exploring</span>
+              <span class="detail-value">GenAI tools and modern QA practices</span>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="skills" id="skills">
+    <section class="work-section" id="work">
       <div class="container">
-        <span class="section-label">Core capabilities</span>
-        <h2>Testing expertise that supports quality.</h2>
+        <div class="section-heading">
+          <span class="eyebrow">Selected work</span>
+          <h2>A few things I have built and explored.</h2>
+          <p>
+            Replace the placeholder links below with your actual GitHub project URLs
+            as you add work samples.
+          </p>
+        </div>
 
-        <div class="card-grid">
-          <div class="skill-card">
-            <div class="skill-number">01</div>
-            <h3>Manual Testing</h3>
-            <p>
-              Functional, regression, exploratory, usability, compatibility,
-              and end-to-end web application testing.
-            </p>
-          </div>
+        <div class="project-list">
 
-          <div class="skill-card">
-            <div class="skill-number">02</div>
-            <h3>Test Automation</h3>
-            <p>
-              UI automation using Selenium WebDriver, Python, Pytest, reusable
-              page objects, and organized test suites.
-            </p>
-          </div>
+          <article class="project">
+            <span class="project-type">Automation</span>
+            <div>
+              <h3>Python + Selenium Test Automation</h3>
+              <p>
+                A structured UI-testing project that demonstrates reusable test
+                design, automated workflows, page objects, and Pytest execution.
+              </p>
+            </div>
+            <a class="project-link" href="https://github.com/">View on GitHub →</a>
+          </article>
 
-          <div class="skill-card">
-            <div class="skill-number">03</div>
-            <h3>API Testing</h3>
-            <p>
-              Request and response validation, authentication, error handling,
-              edge cases, and data-flow testing.
-            </p>
-          </div>
+          <article class="project">
+            <span class="project-type">API testing</span>
+            <div>
+              <h3>API Test Scenarios & Documentation</h3>
+              <p>
+                Practical API test coverage for response validation,
+                error conditions, authentication, edge cases, and data flow.
+              </p>
+            </div>
+            <a class="project-link" href="https://github.com/">View on GitHub →</a>
+          </article>
+
+          <article class="project">
+            <span class="project-type">Manual QA</span>
+            <div>
+              <h3>Test Cases, Test Plans & Bug Reports</h3>
+              <p>
+                Sample QA documentation that demonstrates clear requirements
+                analysis, test-case writing, traceability, and defect reporting.
+              </p>
+            </div>
+            <a class="project-link" href="https://github.com/">View on GitHub →</a>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="now">
       <div class="container">
-        <span class="section-label">Portfolio</span>
-        <h2>Selected project examples.</h2>
+        <div class="section-heading">
+          <span class="eyebrow">What I’m working on</span>
+          <h2>Learning, making, and growing.</h2>
+        </div>
 
-        <p class="section-intro">
-          Replace these samples with links to your real GitHub repositories,
-          QA case studies, or downloadable work samples.
-        </p>
-
-        <div class="card-grid">
-          <div class="project-card">
-            <span class="project-tag">Automation</span>
-            <h3>Web UI Automation Framework</h3>
+        <div class="now-grid">
+          <article class="now-card">
+            <h3>QA automation</h3>
             <p>
-              A Selenium and Pytest framework with reusable page objects, test
-              data, reporting, and regression-test scenarios.
+              Expanding practical Python, Selenium, and Pytest projects with
+              clear test design and maintainable structure.
             </p>
-            <a class="project-link" href="https://github.com/">View Project →</a>
-          </div>
+          </article>
 
-          <div class="project-card">
-            <span class="project-tag">API Testing</span>
-            <h3>API Test Suite</h3>
+          <article class="now-card">
+            <h3>API quality</h3>
             <p>
-              Test scenarios for successful requests, validation errors,
-              authentication, response checks, and edge cases.
+              Deepening my understanding of API testing, nonfunctional risks,
+              and useful test coverage for real-world systems.
             </p>
-            <a class="project-link" href="https://github.com/">View Project →</a>
-          </div>
+          </article>
 
-          <div class="project-card">
-            <span class="project-tag">Manual QA</span>
-            <h3>Test Plan & Bug Reports</h3>
+          <article class="now-card">
+            <h3>Creative learning</h3>
             <p>
-              Sample test plans, test cases, traceability ideas, and structured
-              defect reports for release readiness.
+              Designing educational activities and exploring creative,
+              family-centered projects outside of technology.
             </p>
-            <a class="project-link" href="https://github.com/">View Project →</a>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="contact-section" id="connect">
       <div class="container">
         <div class="contact-box">
-          <div>
-            <h2>Let’s talk about software quality.</h2>
-            <p>
-              I would be glad to connect about QA opportunities, testing
-              projects, or collaboration.
-            </p>
-          </div>
+          <span class="eyebrow">Let’s connect</span>
+          <h2>I’m always glad to meet thoughtful people and discuss good work.</h2>
+          <p>
+            Feel free to reach out about QA opportunities, projects,
+            collaboration, or shared learning interests.
+          </p>
 
-          <a class="button" href="mailto:your-email@example.com">Email Me</a>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:your-email@example.com">Email me</a>
+            <a class="contact-link" href="https://github.com/your-github-username">GitHub</a>
+            <a class="contact-link" href="https://www.linkedin.com/in/your-linkedin-username/">LinkedIn</a>
+            <a class="contact-link" href="resume.pdf">Download résumé</a>
+          </div>
         </div>
       </div>
     </section>
@@ -569,7 +688,7 @@
 
   <footer>
     <div class="container">
-      © 2026 Nivedita Hari. Built with GitHub Pages.
+      © 2026 Nivedita Hari · Built with GitHub Pages
     </div>
   </footer>
 
